@@ -9,5 +9,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::prefix('cash')->group(function(){
         Route::get('', [CashController::class, 'index']);
         Route::post('create', [CashController::class, 'store']);
+        Route::get('{cash:slug}', [CashController::class, 'show']);
     });
 });
